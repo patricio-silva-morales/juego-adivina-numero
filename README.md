@@ -1,4 +1,4 @@
-# 🎮 Juego "Adivina el Número"
+# Juego "Adivina el Número"
 
 Aplicación web desarrollada con **Node.js**, **Express**, **EJS** y **Bootstrap** que permite jugar a adivinar un número aleatorio entre 1 y 10.
 
