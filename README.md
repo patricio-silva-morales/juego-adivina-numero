@@ -115,7 +115,7 @@ Cada vez que termina una partida, se agrega un nuevo registro similar al siguien
 Clonar el repositorio:
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/patricio-silva-morales/juego-adivina-numero
 ```
 
 Ingresar al proyecto:
