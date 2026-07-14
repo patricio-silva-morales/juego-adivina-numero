@@ -1,0 +1,33 @@
+# Dependencias
+node_modules/
+jspm_packages/
+web_modules/
+
+# Variables de entorno (Contienen contraseñas y llaves secretas)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs (Historiales de errores)
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Diagnósticos y caché
+.pnpm-debug.log*
+.eslintcache
+.stylelintcache
+.node_repl_history
+
+# Carpetas de compilación (Si usas TypeScript o Babel)
+dist/
+build/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db

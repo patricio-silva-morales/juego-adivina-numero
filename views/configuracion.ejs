@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head") %>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include("partials/navbar") %>
+
+    <main class="container mt-5">
+        <div class="card border-danger">
+            <div class="card-body">
+                <h1>Configuración</h1>
+                <p>Esta opción eliminará todas las partidas almacenadas en el archivo JSON.</p>
+                <% if (mensaje !== "") { %>
+                    <div class="alert alert-success">
+                        <%= mensaje %>
+                    </div>
+                <% } %>
+                <form action="/reiniciar-historial" method="POST" >
+                    <button type="submit" class="btn btn-danger">Reiniciar historial</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <%- include("partials/footer") %>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head") %>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include("partials/navbar") %>
+
+    <main class="container mt-5">
+        <h1>Historial de partidas</h1>
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <strong>Total:</strong>
+                        <%= totalPartidas %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <strong>Ganadas:</strong>
+                        <%= partidasGanadas %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <strong>Perdidas:</strong>
+                        <%= partidasPerdidas %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <strong>Puntaje total:</strong>
+                        <%= puntajeTotal %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% if (partidas.length === 0) { %>
+            <div class="alert alert-info">
+                No existen partidas registradas.
+            </div>
+        <% } else { %>
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Puntaje</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (const partida of partidas) { %>
+                        <tr>
+                            <td><%= partida.nombre %></td>
+                            <td><%= partida.puntaje %></td>
+                            <td><%= partida.fecha %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        <% } %>
+    </main>
+
+    <%- include("partials/footer") %>
+</body>
+</html>

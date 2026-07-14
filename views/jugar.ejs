@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head") %>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include("partials/navbar") %>
+
+    <main class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1>Partida de <%= nombreJugador %></h1>
+                <p>Intentos utilizados: <strong><%= intentos %></strong></p>
+                <p>Intentos restantes: <strong><%= intentosRestantes %></strong></p>
+
+                <% if (mensaje !== "") { %>
+                    <div class="alert alert-info">
+                        <%= mensaje %>
+                    </div>
+                <% } %>
+
+                <% if (!partidaTerminada) { %>
+                    <form action="/jugar" method="POST">
+                        <div class="mb-3">
+                            <label for="numero" class="form-label">Ingrese un número</label>
+                            <input type="number" id="numero" name="numero" min="1" max="10" class="form-control"required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Intentar</button>
+                    </form>
+                <% } else { %>
+                    <h3>Resultado</h3>
+                    <p>Número secreto: <strong><%= numeroSecreto %></strong></p>
+                    <p>Puntaje obtenido: <strong><%= puntaje %></strong></p>
+                    <% if (puntaje > 0) { %>
+                        <div class="alert alert-success">
+                            ¡Ganaste la partida!
+                        </div>
+                    <% } else { %>
+                        <div class="alert alert-danger">
+                            Perdiste la partida.
+                        </div>
+                    <% } %>
+                    <a href="/" class="btn btn-primary">Nueva partida</a>
+                    <a href="/historial" class="btn btn-secondary">Ver historial</a>
+                <% } %>
+            </div>
+        </div>
+    </main>
+
+    <%- include("partials/footer") %>
+</body>
+</html>

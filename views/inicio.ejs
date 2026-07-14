@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head") %>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include("partials/navbar") %>
+
+    <main class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1>Adivina el número</h1>
+                <p>Debes adivinar un número secreto entre 1 y 10.</p>
+                <p>Tendrás un máximo de cinco intentos.</p>
+
+                <ul>
+                    <li>Primer intento: 3 puntos.</li>
+                    <li>Entre el segundo y quinto: 1 punto.</li>
+                    <li>Si no aciertas: 0 puntos.</li>
+                </ul>
+
+                <% if (mensaje !== "") { %>
+                    <div class="alert alert-danger">
+                        <%= mensaje %>
+                    </div>
+                <% } %>
+
+                <form action="/comenzar" method="POST">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre del jugador</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Comenzar partida</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <%- include("partials/footer") %>
+</body>
+</html>
